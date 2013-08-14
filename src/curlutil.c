@@ -10,7 +10,7 @@
 
 #include "curlutil.h"
 
-#define MAXBUFFER 40960
+#define MAXBUFFER 409600
 static size_t get_data(void *ptr, size_t size, size_t nmemb, void *stream)
 {
 	if (strlen((char *)stream) + strlen((char *)ptr) > MAXBUFFER) return 0;

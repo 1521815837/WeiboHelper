@@ -16,19 +16,22 @@ typedef long long int64;
 #include <stdlib.h>
 
 struct weibo{
-	char 	create_time[32];	//微博的创建时间
 	long long id			;	//微博ID
-	char	text[300];			//微博内容
-	char	username[31];		//微博用户昵称
+	char 	create_time[32];	//微博的创建时间
+	char	text[425];			//微博内容
+	char	username[50];		//微博用户昵称
 	struct weibo* next;	//指向下一条微博
 };
 
 /*
  * 从字符串中获取微博
  */
-//struct weibo* get_weibos(const char* strings);
+struct weibo* get_weiboes(const char* strings);
 
-struct weibo* get_weibos_2(const char* strings);
+/*
+ * 从字符串中获取微博,与get_weiboes不同的主要是这个以使用sscanf为主
+ */
+struct weibo* get_weiboes_2(const char* strings);
 
 /*
  * 清空申请的空间

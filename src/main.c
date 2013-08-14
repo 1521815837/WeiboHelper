@@ -30,9 +30,9 @@ int main()
 {
 	init_config();
 	char* result=(char*)calloc(MAXBUFFER,sizeof(char));
-	get_newest_at_user(access_token,20,result);
-	debug("result's length is %d\n",strlen(result));
-	free_weibo(get_weiboes_2(result));
+	//get_newest_at_user(access_token,20,result);
+	//debug("result's length is %d\n",strlen(result));
+	//free_weibo(get_weiboes_2(result));
 	free(result);
 	return 0;
 }

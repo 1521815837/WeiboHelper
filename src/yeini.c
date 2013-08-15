@@ -27,6 +27,7 @@ static char* CFG_FILE_URL="/etc/ye.conf";	//配置文件路径
 char access_token[33]="";	//新浪微博Token
 //char weibo_content_add[160]="";	//微博内容
 //char serial_port[16]="";		//串口地址
+char db_file_url[36]="";	//数据库文件路径
 /*
 
 */
@@ -63,6 +64,7 @@ void init_config(){
 	//yeelight=get_int(buf,"Yeelight","YEELIGHT",0);
 	//get_string(buf,"Yeelight","YEELINK_APIKEY","",yeelink_apikey,sizeof(yeelink_apikey));
 	get_string(buf,"Ye_Config","AccessToken","",access_token,sizeof(access_token));
+	get_string(buf,"Ye_Config","DB_FILE_URL","",db_file_url,sizeof(db_file_url));
 	//get_string(buf,"Ye_Config","WeiboContentAdd","",weibo_content_add,sizeof(weibo_content_add));
 	//get_string(buf,"Ye_Config","Serial","/dev/tty0",serial_port,sizeof(serial_port));
 	free(buf);

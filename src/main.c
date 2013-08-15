@@ -9,7 +9,8 @@
 #include <stdio.h>
 #include "yeini.h"
 #include "includes.h"
-#include "wbh_base.h"
+#include "wbh.h"
+
 
 #define DEBUG
 
@@ -34,9 +35,8 @@ int main()
 	//get_newest_at_user(access_token,20,result);
 	//debug("result's length is %d\n",strlen(result));
 	//free_weibo(get_weiboes_2(result));
-	get_orderExec_by_orderName("天王盖地虎",result);
-
-
+//	get_unread_count(access_token,result);
+	weiBoHelper();
 	free(result);
 	//init_weh_DB();
 	return 0;

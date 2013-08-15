@@ -33,6 +33,12 @@ struct weibo* get_weiboes(const char* strings);
  */
 struct weibo* get_weiboes_2(const char* strings);
 
+//新提及我的微博数
+int get_unread_mention_status(const char* json_result);
+
+//对新提及我的微博数清零
+int reset_unread_mention_status(const char* access_token);
+
 /*
  * 清空申请的空间
  */

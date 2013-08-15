@@ -116,3 +116,16 @@ void free_weibo(struct weibo* weibo)
 		weibo=temp;
 	}while(weibo);
 }
+
+int get_unread_mention_status(const char* json_result)
+{
+	char* p=strstr(json_result,"mention_status");
+	int count;
+	sscanf(p,"mention_status\":%d",&count);
+	return count;
+}
+
+int reset_unread_mention_status(const char* access_token)
+{
+	return remind_reset(access_token,"mention_status");
+}

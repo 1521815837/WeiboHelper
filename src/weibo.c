@@ -5,7 +5,7 @@
  *      Author: yeso
  *  		QQ:	272288813
  *		e-mail: cheng@yeso.me
- * 		version:0.1
+ * 		version:0.11
  */
 
 #include "weibo.h"
@@ -75,7 +75,7 @@ int new_weibo_post_upload(const char* access_token,const char* content,const cha
 	ret = curl_easy_perform(curl);
 
 	printf("ret:%d\nresult:\n%s\n",ret,result);
-		if(NULL==strstr(result,"mention_status")){	//微博发表不成功
+		if(NULL==strstr(result,"created_at")){	//微博发表不成功
 			state=FAULT;
 		}
 	curl_formfree(post);
@@ -105,13 +105,13 @@ int get_newest_at_user(const char* access_token,int count,char* result)
 int get_unread_count(const char* access_token,char* result)
 {
 	int ret;
-	char* argv =(char*) calloc(128,sizeof(char));
 	int state=SUCCESS;
+	char* argv =(char*) calloc(128,sizeof(char));
 
 	sprintf(argv,"access_token=%s",access_token);
 	ret=get_with_argv(WEIBO_GET_UNREAD_URL,argv,result);
 	debug("ret:%d\nresult:\n%s\n",ret,result);
-	if(NULL==strstr(result,"statuses")){	//获取出错?
+	if(NULL==strstr(result,"status")){	//获取出错?
 		state=FAULT;
 	}
 	free(argv);
@@ -164,7 +164,7 @@ int remind_reset(const char* access_token,const char* type)
 	sprintf(argv, "access_token=%s&type=%s", access_token,type);
 	ret=post_with_argv(WEIBO_REMIND_RESET_URL,argv,result);
 	debug("ret:%d\nresult:\n%s\n",ret,result);
-	if(NULL==strstr(result,"created_at")){	//获取出错?
+	if(NULL==strstr(result,"true")){	//获取出错?
 		state=FAULT;
 	}
 	free(argv);

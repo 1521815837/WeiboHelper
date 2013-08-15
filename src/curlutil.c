@@ -5,7 +5,7 @@
  *      Author: yeso
  *  		QQ:	272288813
  *		e-mail: cheng@yeso.me
- *		version:0.1
+ *		version:0.10
  */
 
 #include "curlutil.h"
@@ -42,6 +42,7 @@ int post_with_argv(const char* URL,const char* argv,char* result)
 
 int get_with_argv(const char* URL,const char* argv,char* result)
 {
+	memset(result,0,sizeof(result));
 	CURL *curl = NULL;
 	CURLcode ret;
 	char* data = (char*) calloc(512,sizeof(char));

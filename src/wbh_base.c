@@ -33,11 +33,11 @@ int init_weh_DB(){
  */
 int get_orderName_by_weiboContent(const struct weibo* weibo,char* orderName)
 {
-	char* p=weibo->next;
+	char* p=weibo->text;
 	if(*p=='@'){
-			sscanf(weibo->next,"%*s%s",orderName);
+			sscanf(weibo->text,"%*s%s",orderName);
 		}else{
-			sscanf(weibo->next,"%s%*s",orderName);
+			sscanf(weibo->text,"%s%*s",orderName);
 		}
 	return 0;
 }

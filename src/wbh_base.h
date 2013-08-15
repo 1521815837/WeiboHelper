@@ -21,8 +21,14 @@
  */
 int init_weh_DB();
 
+/*
+ * 从微博内容中分离出指令
+ */
 int get_orderName_by_weiboContent(const struct weibo* weibo,char* orderName);
 
+/*
+ * 在数据库中通过指令查询出要执行的命令
+ */
 int get_orderExec_by_orderName(const char* orderName,char* orderExec);
 
 #endif /* WBH_BASE_H_ */

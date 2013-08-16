@@ -31,13 +31,22 @@ typedef long long int64;
 #define SUCCESS 0
 #define FAULT 1
 
-int new_weibo_post(const char* access_token,const char* content);	//发送一条新微博
-int new_weibo_post_upload(const char* access_token,const char* content,const char* picture_file_name);	//发送一条微博+图片
+/*
+ * 发送一条新微博
+ */
+int new_weibo_post(const char* access_token,const char* content);
+
+/*
+ * //发送一条带图片的微博
+ */
+int new_weibo_post_upload(const char* access_token,const char* content,const char* picture_file_name);
 
 /*
  * 获取最新的@用户的自己所关注的人的微博(原创)
+ * since_id:若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+ * count:单页返回的记录条数，最大不超过200，默认为20。
  */
-int get_newest_at_user(const char* access_token,int count,char* result);
+int get_newest_at_user(const char* access_token,long long since_id,int count,char* result);
 
 
 /*

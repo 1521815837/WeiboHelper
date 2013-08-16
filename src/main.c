@@ -39,5 +39,7 @@ int main()
 	weiBoHelper();
 	free(result);
 	//init_weh_DB();
+//	get_lastRead_WeiboID();
+	//set_lastRead_WeiboID(111);
 	return 0;
 }

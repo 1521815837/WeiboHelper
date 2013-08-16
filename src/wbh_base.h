@@ -31,4 +31,12 @@ int get_orderName_by_weiboContent(const struct weibo* weibo,char* orderName);
  */
 int get_orderExec_by_orderName(const char* orderName,char* orderExec);
 
+
+/*
+ * 读出tb_lastread表中保存的微博ID
+ */
+long long get_lastRead_WeiboID();
+
+int set_lastRead_WeiboID(long long id);
+
 #endif /* WBH_BASE_H_ */

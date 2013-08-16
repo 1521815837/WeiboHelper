@@ -85,12 +85,12 @@ int new_weibo_post_upload(const char* access_token,const char* content,const cha
 	return state;
 }
 
-int get_newest_at_user(const char* access_token,int count,char* result)
+int get_newest_at_user(const char* access_token,long long since_id,int count,char* result)
 {
 	int ret;
 	char* argv =(char*) calloc(128,sizeof(char));
 	int state=SUCCESS;
-	sprintf(argv,"access_token=%s&&filter_by_type=1&filter_by_author=1&count=%d",access_token,count);
+	sprintf(argv,"access_token=%s&&filter_by_type=1&filter_by_author=1&count=%d&since_id=%lld",access_token,count,since_id);
 	ret=get_with_argv(WEIBO_GET_NEWEST_URL,argv,result);
 
 	debug("ret:%d\nresult:\n%s\n",ret,result);

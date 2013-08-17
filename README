@@ -7,5 +7,10 @@
 说明：   
 1.程序使用了sqlite3数据库以及libcurl，编译别忘了libcurl libsqlt3   
 2.助手微博切记需要设置好只接收来自自己关注的人的提醒等等   
-   
+3.数据库的路径和助手微博使用的token请在配置文件ye.conf中指定   
+4.配置文件请放在/etc目录下   
+5.第一次需要执行函数wbh_base.h中的init_weh_DB()生成数据库文件。   
+6.不知道什么是微博的access_token的，请参考open.weibo.com   
+7.查询weibo.h中的函数get_token()去获取助手微博的token.   
+8.对于程序有疑问的可联系QQ：272288813   
   

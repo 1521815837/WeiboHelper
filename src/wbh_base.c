@@ -23,7 +23,7 @@ int init_weh_DB(){
 	sql_alter(db_file_url,sql_create_ordertb);
 
 	//create test data
-	char* sql_insert_ordertb="insert into tb_order(order_name,order_exec) values('天王盖地虎','宝塔镇河妖')";
+	char* sql_insert_ordertb="insert into tb_order(order_name,order_exec) values('天王盖地虎',\"echo '宝塔镇河妖' >> /tmp/wbh.log\")";
 	sql_alter(db_file_url,sql_insert_ordertb);
 
 	//create table 保存最后一次检测@指令的微博ID

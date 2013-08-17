@@ -78,7 +78,8 @@ int weiBoHelper()
 
 				if(strlen(orderExec)){	//指令存在
 					debug("指令存在!\n");
-					sprintf(comment,"主人，指令已收到,接下来将会执行：\"%s\"",orderExec);
+					system(orderExec);
+					sprintf(comment,"主人，指令:\"%s\" 已执行。",orderName);
 					new_comments_post(access_token,comment,next->id);
 				}
 				else{//指令不存在

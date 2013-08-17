@@ -1,1 +1,11 @@
-no finished.   
+基于linux C的微博远程操控助手   
+
+首发于：http://yeso.me/?p=588   
+
+
+
+说明：   
+1.程序使用了sqlite3数据库以及libcurl，编译别忘了libcurl libsqlt3   
+2.助手微博切记需要设置好只接收来自自己关注的人的提醒等等   
+   
+  

@@ -31,15 +31,7 @@ extern char access_token[];
 int main()
 {
 	init_config();
-	char* result=(char*)calloc(MAXBUFFER,sizeof(char));
-	//get_newest_at_user(access_token,20,result);
-	//debug("result's length is %d\n",strlen(result));
-	//free_weibo(get_weiboes_2(result));
-//	get_unread_count(access_token,result);
 	weiBoHelper();
-	free(result);
-	//init_weh_DB();
-//	get_lastRead_WeiboID();
-	//set_lastRead_WeiboID(111);
+//	init_weh_DB();
 	return 0;
 }
